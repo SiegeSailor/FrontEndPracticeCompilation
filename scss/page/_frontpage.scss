@@ -1,0 +1,27 @@
+// 上方區域
+.header {
+	background:$layout-background-maincolor;
+	a {
+		font-size:$layout-text-link-fontsize;
+		@include hiddentext;
+		display:block;
+	}
+	h1 {
+		font-size:$layout-text-content-fontsize-large;
+	}
+	.circle {
+		@include circle(50px,#808e87){
+			line-height: 5000px;
+		};
+		@include iphone5(){
+			background:$layout-background-maincolor;
+			display:none;
+		}
+		@include link {
+			color:#5a5759;
+		}
+		@include ie8 {
+			display:inline-block;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+// 
+// 視差滾動：parallaxscrolling
+// 
+
+.parallaxscrolling {
+	height: 512px;
+	@include parallaxscrolling(url("https://i.ytimg.com/vi/O-XidwKsKAE/maxresdefault.jpg"));
+}

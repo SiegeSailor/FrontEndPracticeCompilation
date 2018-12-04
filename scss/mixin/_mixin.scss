@@ -1,0 +1,84 @@
+// 常用組合
+@mixin hiddentext {
+	text-indent: 101%;
+	white-space:nowrap;
+	overflow:hidden;
+}
+@mixin circle($size,$backgroundcolor) {
+	border-radius: 50%;
+	height: $size;
+	width:$size;
+	font-size:$size/3;
+	background:$backgroundcolor;
+	@content;
+}
+@mixin parallaxscrolling($background) {
+	background-attachment: fixed;
+	background-image:$background;
+	background-size: cover;
+	background-position: top center;
+	@content;
+}
+@mixin animate-text-decoration {
+	&,&:link,&:visited,&:focus {
+		text-decoration: none;
+	}
+	position: relative;
+	&::after{
+            content:'';
+            display:block;
+            width:0;
+            height:3px;
+            position:absolute;
+            left:0;
+            bottom:-10px;
+            background:#ffffff;
+            transition:all 0.3s ease-in-out;
+        }
+        &:hover::after{
+            width:100%;
+        }
+}
+@mixin fade-origin {
+	opacity: 0;
+	transition: all 3s;
+	@content;
+}
+@mixin fadein {
+	opacity: 1;
+	@content;
+}
+
+
+// 寬度組合
+@mixin iphone5 {
+	@media (max-width:320px) {
+		@content ;
+		// @content 可使能在 @include 叫出的 mixin 變量後加上括號、增加樣式。
+	}
+}
+
+// 狀態組合
+@mixin link {
+	&:link,&:visited {
+		// & 轉譯後為當下使用該 @include 的 class 選擇器，可加快對於狀態的編寫。
+		@content;
+	}
+}
+@mixin hover {
+	&:hover {
+		@content;
+	}
+}
+
+// 瀏覽器
+@mixin ie8 {
+	.ie8 & {
+		// 透過前方多一權重的方式覆蓋，在遇上需特定支援的瀏覽器如 ie8 時，
+		// 只要透過類似 modernizr 的動態加入，
+		// 在每個 Html 的 Tag 前加入 ie8 選擇器，
+		// 就能全面採用這個 ie8 & 的較高權重樣式並覆蓋原有樣式。
+		// 在 scss 中，就是能加快對於不同權限選擇器的編寫。
+		@content;
+	}
+}

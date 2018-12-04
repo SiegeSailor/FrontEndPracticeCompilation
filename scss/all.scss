@@ -1,0 +1,35 @@
+// 按照以下順序結構
+
+// 通用變量
+@import "variable/variable";
+
+// 通用組合
+@import "mixin/mixin";
+// @import "mixin/grid";
+// @import "mixin/state";
+// @import "mixin/browser";
+
+// 通用前置
+// @import "reset";
+
+// 通用頁面
+// @import "layout";
+// @import "layout/header";
+// @import "layout/footer";
+// @import "layout/linespacing";
+
+// 通用元件
+// @import "module/button";
+// @import "module/form";
+// @import "module/table";
+@import "module/button-menu";
+@import "module/menu-slide-offcanvas";
+@import "module/animate-text-decoration";
+@import "module/progress";
+@import "module/fixedlength-background";
+@import "module/fade-origin";
+@import "module/fadein";
+
+// 個別頁面
+@import "page/frontpage";
+@import "page/parallaxscrolling";

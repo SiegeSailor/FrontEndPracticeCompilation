@@ -1,0 +1,72 @@
+// 
+// 側邊選單移動：menu-slide-offcanvas
+// 
+
+.menu-slide-offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(56, 56, 56, 0.95);
+    transform: translateX(-2000px);
+    color: #ffffff;
+    z-index: 800;
+    transition: 0.35s ease !important;
+
+    h5 {
+        padding-bottom: 5px;
+        margin-bottom:15px;
+        font-weight: bolder;
+        position: relative;
+
+        @include hover {
+            color: $layout-text-link-fontcolor-white-hover;
+        }
+
+        .menu-slide-offcanvas-scrollactive {
+            background: none;
+            color: #ffffff;
+
+            // 與h5上的選擇器animate-text-decoration相對，
+            // 由選擇器的width:0到這裡的100%。
+            &::after {
+                width: 100%;
+            }
+
+            @include hover {
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+
+    p {
+        padding-left: 24px;
+    }
+
+    a {
+        color: $layout-text-link-fontcolor-white;
+        text-decoration: none;
+        padding: 4px 8px;
+        display: block;
+
+        @include hover {
+            color: $layout-text-link-fontcolor-white-hover;
+        }
+    }
+
+    .menu-slide-offcanvas-scrollactive {
+        background: #ffffff;
+        color: rgba(56, 56, 56, 1);
+
+        @include hover {
+            color: rgba(56, 56, 56, 0.5);
+        }
+    }
+}
+
+.menu-slide-offcanvas-active {
+    .menu-slide-offcanvas {
+        transform: translateX(0px);
+    }
+}

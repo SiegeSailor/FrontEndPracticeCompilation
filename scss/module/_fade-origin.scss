@@ -1,0 +1,9 @@
+// 
+// 滑入、淡入的前置：fade-origin
+// 
+
+.fade-origin {
+	@include fade-origin {
+		transform: translateY(-50px);
+	}
+}
